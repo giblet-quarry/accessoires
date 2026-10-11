@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1E3A2E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Accessoires">
+<meta name="robots" content="noindex,nofollow">
+<title>Hochzeits-Accessoires</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E3A2E'/%3E%3Cpath d='M12 22l16 10-16 10zM52 22L36 32l16 10z' fill='%23A6823A'/%3E%3Crect x='27' y='27' width='10' height='10' rx='2' fill='%23A6823A'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/bodoni-moda@5/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/bodoni-moda@5/500-italic.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/karla@5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/karla@5/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/karla@5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5/500.css">
+<style>
+/* Layout: Sticky Kopfzeile mit Umschalter Stücke/Sets, darunter ein Pinnwand-Raster in Spalten; Details, Formulare und Sets als Ebenen darüber. */
+/* Farbwelt: Flanell und Leinen als Grund, Flaschengrün mit Nadelstreifen im Kopf, Ochsenblut als Akzent, Messing für Details. */
+:root{
+  --bg:#ECE8DF; --surface:#F8F6F0; --sunk:#E1DCD0; --ink:#1C2620; --muted:#5C6259; --line:#CFC7B6;
+  --accent:#7A2232; --accent-ink:#F8F2EA; --green:#1E4334; --green-ink:#F3EEE2; --brass:#A6823A;
+  --head-bg:#1E3A2E; --head-ink:#F1ECDF; --head-muted:#CDB57C; --stripe:rgba(241,236,223,.06);
+  --danger:#9E2F22; --scrim:rgba(16,24,19,.58);
+  --f-display:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
+  --f-body:'Karla',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --r:14px; --gutter:16px;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0F1612; --surface:#17201A; --sunk:#202A23; --ink:#EAE4D6; --muted:#A4AA9E; --line:#2C3830;
+  --accent:#C25E6C; --accent-ink:#1A0A0D; --green:#5E9A7C; --green-ink:#0D1611; --brass:#D1AE62;
+  --head-bg:#10261C; --head-ink:#EAE4D6; --head-muted:#C9AA5E; --stripe:rgba(234,228,214,.045);
+  --danger:#E5826F; --scrim:rgba(0,0,0,.68); color-scheme:dark}}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--head-bg)}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:inherit}
+
+/* Kopf */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;color:var(--head-ink);background-color:var(--head-bg);background-image:repeating-linear-gradient(90deg,transparent 0 21px,var(--stripe) 21px 22px);border-bottom:3px double var(--brass)}
+.top-in{max-width:1400px;margin:0 auto;padding-inline:var(--gutter);padding-block:12px 10px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.brand{display:flex;flex-direction:column;min-width:0;margin-right:auto}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.top .eyebrow{color:var(--head-muted)}
+.brand h1{font-family:var(--f-display);font-weight:500;font-size:clamp(26px,5vw,34px);line-height:1;margin:2px 0 0;letter-spacing:-.01em}
+.seg{display:inline-flex;background:rgba(0,0,0,.22);border-radius:999px;padding:3px}
+.seg button{padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;color:var(--head-ink);opacity:.75}
+.seg button[aria-pressed="true"]{background:var(--brass);color:var(--head-bg);opacity:1}
+.chips-wrap{max-width:1400px;margin:0 auto;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips-wrap::-webkit-scrollbar{display:none}
+.chips{display:flex;gap:8px;padding-inline:var(--gutter);padding-block:0 12px;width:max-content}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;font-size:14px;white-space:nowrap;background:var(--surface)}
+.chip .n{font-family:var(--f-mono);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip[aria-pressed="true"] .n{color:inherit;opacity:.7}
+.top .chip{background:transparent;color:var(--head-ink);border-color:color-mix(in srgb,var(--head-ink) 22%,transparent)}
+.top .chip .n{color:var(--head-muted)}
+.top .chip[aria-pressed="true"]{background:var(--head-ink);color:var(--head-bg);border-color:var(--head-ink)}
+.top .chip[aria-pressed="true"] .n{color:var(--accent);opacity:1}
+
+main{max-width:1400px;margin:0 auto;padding-inline:var(--gutter);padding-block:18px 120px}
+
+/* Pinnwand */
+.grid{column-count:2;column-gap:12px}
+@media(min-width:640px){.grid{column-count:3;column-gap:16px}}
+@media(min-width:980px){.grid{column-count:4}}
+@media(min-width:1300px){.grid{column-count:5}}
+.pin{display:block;width:100%;break-inside:avoid;margin-bottom:12px;text-align:left;position:relative}
+@media(min-width:640px){.pin{margin-bottom:16px}}
+.ph{position:relative;border-radius:var(--r);overflow:hidden;background:var(--sunk);max-width:100%}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.pin:hover .ph img{transform:scale(1.025)}
+.ph.empty{aspect-ratio:4/5;display:grid;place-items:center;padding:14px;border:1px dashed var(--line);background:var(--surface)}
+.ph.empty span{font-family:var(--f-display);font-style:italic;font-size:22px;text-align:center;color:var(--muted);line-height:1.1}
+.cap{display:flex;flex-direction:column;gap:1px;padding:7px 4px 0}
+.cap .cat{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.cap .t{font-weight:600;font-size:14px;line-height:1.3;overflow-wrap:anywhere}
+.cap .p{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.badge{position:absolute;top:8px;left:8px;font-family:var(--f-mono);font-size:10.5px;padding:3px 7px;border-radius:999px;background:rgba(20,24,22,.72);color:#F3EFE6;letter-spacing:.04em}
+.check{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.88);color:#1C2620;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);font-weight:700}
+.pin.on .check{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.pin.on .ph{outline:3px solid var(--accent);outline-offset:-3px}
+
+/* Leere Zustände */
+.empty-state{max-width:520px;margin:8vh auto 0;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.empty-state h2{font-family:var(--f-display);font-weight:500;font-size:28px;margin:0;text-wrap:balance}
+.empty-state p{color:var(--muted);margin:0;text-wrap:pretty}
+.tags-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:6px}
+.tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--line);border-radius:6px;color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);text-decoration:none}
+.btn.primary{background:var(--green);color:var(--green-ink);border-color:var(--green)}
+.btn.gold{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.danger{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 40%,transparent)}
+.btn.danger.solid{background:var(--danger);color:#fff;border-color:var(--danger)}
+.btn[disabled]{opacity:.55;cursor:default}
+.btn.sm{min-height:36px;padding:0 13px;font-size:14px}
+.fab{position:fixed;right:max(var(--gutter),env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;min-height:54px;padding:0 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:16px;box-shadow:0 6px 20px rgba(0,0,0,.22);display:flex;align-items:center;gap:8px}
+.fab .plus{font-size:24px;line-height:1;margin-top:-2px}
+
+/* Sets-Übersicht */
+.sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}
+.setcard{display:flex;flex-direction:column;gap:10px;text-align:left;padding:10px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.collage{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border-radius:10px;overflow:hidden}
+.cell{aspect-ratio:1;background:var(--sunk);position:relative;overflow:hidden;display:grid;place-items:center}
+.cell img{width:100%;height:100%;object-fit:cover;display:block}
+.cell .ab{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center;padding:2px;line-height:1.15}
+.cell .ab.has{color:var(--ink)}
+.setcard h3{font-family:var(--f-display);font-weight:500;font-size:21px;margin:0 2px;line-height:1.15;overflow-wrap:anywhere}
+.setcard .meta{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);margin:0 2px 2px;font-variant-numeric:tabular-nums}
+
+/* Ebenen */
+.layer{position:fixed;inset:0;background:var(--scrim);display:flex;align-items:flex-end;justify-content:center;opacity:0;transition:opacity .18s ease}
+.layer.in{opacity:1}
+.panel{position:relative;background:var(--surface);width:100%;max-height:calc(100% - env(safe-area-inset-top,0px) - 10px);overflow-y:auto;overscroll-behavior:contain;border-radius:20px 20px 0 0;transform:translateY(16px);transition:transform .22s ease;display:flex;flex-direction:column}
+.layer.in .panel{transform:none}
+@media(min-width:760px){.layer{align-items:center;padding:24px}.panel{border-radius:18px;max-width:580px;max-height:calc(100% - 48px)}}
+.phead{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:10px;padding:14px var(--gutter) 12px;background:var(--surface);border-bottom:1px solid var(--line)}
+.phead h2{font-family:var(--f-display);font-weight:500;font-size:22px;margin:0;flex:1;min-width:0;overflow-wrap:anywhere;line-height:1.15}
+.x{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--sunk);font-size:20px;flex:none}
+.pbody{padding:16px var(--gutter) 20px;display:flex;flex-direction:column;gap:18px}
+.pfoot{position:sticky;bottom:0;display:flex;gap:10px;justify-content:flex-end;padding:12px var(--gutter) calc(12px + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:1px solid var(--line)}
+
+/* Detail */
+.detail .panel{height:100%;max-height:none;border-radius:0}
+.dwrap{display:flex;flex-direction:column}
+.dimg{background:var(--sunk);display:grid;place-items:center;min-height:200px}
+.dimg img{display:block;width:100%;max-height:72vh;object-fit:contain}
+.dimg.empty{aspect-ratio:4/3}
+.dimg.empty span{font-family:var(--f-display);font-style:italic;font-size:30px;color:var(--muted)}
+.dinfo{padding:18px var(--gutter) calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:16px;min-width:0}
+.dinfo h2{font-family:var(--f-display);font-weight:500;font-size:clamp(26px,4vw,34px);line-height:1.08;margin:4px 0 0;text-wrap:balance;overflow-wrap:anywhere}
+.dprice{font-size:17px;font-weight:600;font-variant-numeric:tabular-nums}
+.dnote{margin:0;white-space:pre-wrap;max-width:62ch;overflow-wrap:anywhere}
+.host{font-family:var(--f-mono);font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.sect{display:flex;flex-direction:column;gap:8px}
+.sect h3{font-family:var(--f-mono);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+.setchips{display:flex;flex-wrap:wrap;gap:8px}
+.setchips .chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.dclose{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:3;background:rgba(20,24,22,.6);color:#fff}
+@media(min-width:900px){
+  .detail{padding:28px}
+  .detail .panel{max-width:1120px;height:min(88vh,860px);border-radius:18px;overflow:hidden}
+  .dwrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);height:100%}
+  .dimg{height:100%;min-height:0}
+  .dimg img{max-height:100%;height:100%}
+  .dimg.empty{aspect-ratio:auto}
+  .dinfo{overflow-y:auto;padding:30px 28px}
+  .dclose{top:12px}
+}
+
+/* Formular */
+.field{display:flex;flex-direction:column;gap:6px}
+.field>label,.field>.lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.input{width:100%;min-height:46px;padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:16px}
+textarea.input{min-height:84px;resize:vertical}
+.catpick{position:relative;display:flex;flex-wrap:wrap;gap:8px}
+.catpick input{position:absolute;opacity:0;pointer-events:none}
+.catpick label{padding:9px 13px;border:1px solid var(--line);border-radius:999px;font-size:14.5px;background:var(--bg)}
+.catpick input:checked+label{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.catpick input:focus-visible+label{outline:2px solid var(--accent);outline-offset:2px}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:150px;border:1.5px dashed var(--line);border-radius:14px;background:var(--bg);text-align:center;padding:14px;cursor:pointer;position:relative;overflow:hidden}
+.drop strong{font-size:16px}
+.drop small{color:var(--muted);font-size:13px;max-width:34ch}
+.drop.has{padding:0;border-style:solid;min-height:0}
+.drop.has img{display:block;width:100%;max-height:300px;object-fit:contain;background:var(--sunk)}
+.drop.drag{border-color:var(--accent)}
+.err{color:var(--danger);font-size:14px;margin:0}
+.hint{color:var(--muted);font-size:13px;margin:0}
+.two{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:520px){.two{grid-template-columns:2fr 1fr}}
+
+/* Set-Ansicht */
+.setview .panel{max-width:760px}
+.namein{font-family:var(--f-display);font-weight:500;font-size:24px;border:0;border-bottom:1px solid transparent;background:transparent;padding:4px 0;width:100%;min-width:0}
+.namein:hover,.namein:focus{border-bottom-color:var(--line);outline:none}
+.slot{display:flex;flex-direction:column;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.slot:last-child{border-bottom:0}
+.slot-h{display:flex;align-items:baseline;gap:10px}
+.slot-h h3{font-family:var(--f-display);font-weight:500;font-size:19px;margin:0;flex:1;min-width:0}
+.slot-h .n{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.strip-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+.strip{display:flex;gap:10px;width:max-content;padding-bottom:2px}
+.mini{width:104px;flex:none;text-align:left;display:flex;flex-direction:column;gap:4px}
+.mini .ph{aspect-ratio:4/5}
+.mini .ph img{height:100%}
+.mini .ph.empty span{font-size:14px}
+.mini .t{font-size:12.5px;line-height:1.25;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.addtile{width:104px;aspect-ratio:4/5;flex:none;border:1.5px dashed var(--line);border-radius:var(--r);display:grid;place-items:center;color:var(--muted);font-size:13px;font-weight:600;text-align:center;padding:8px;background:var(--bg)}
+.addtile .plus{display:block;font-size:26px;line-height:1;color:var(--accent)}
+.picker .panel{max-width:900px}
+.picker .grid{column-count:2}
+@media(min-width:640px){.picker .grid{column-count:3}}
+
+.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(10px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:999;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.note-box{background:var(--sunk);border-radius:12px;padding:12px 14px;color:var(--muted);font-size:14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <span class="eyebrow">Hochzeit · Bräutigam &amp; Trauzeuge</span>
+      <h1>Accessoires</h1>
+    </div>
+    <div class="seg" role="group" aria-label="Ansicht">
+      <button id="tabItems" data-a="tab" data-v="items" aria-pressed="true">Stücke</button>
+      <button id="tabSets" data-a="tab" data-v="sets" aria-pressed="false">Sets</button>
+    </div>
+  </div>
+  <div class="chips-wrap" id="chipsWrap"><div class="chips" id="chips"></div></div>
+</header>
+<main id="main"></main>
+<button class="fab" id="fab" data-a="add"><span class="plus" aria-hidden="true">+</span><span id="fabLabel">Stück hinzufügen</span></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4/dist/umd/supabase.js"></script>
+<script>
+/* ---------- Verbindung ---------- */
+const SUPABASE_URL='https://efykqoroxzfnezcrswry.supabase.co';
+const SUPABASE_KEY='sb_publishable_s-USBwy74ddWDd6PBM6uiQ_Ufz5GO-l';
+const BUCKET='fotos';
+
+const CATS=[
+  {k:'hosentraeger',l:'Hosenträger',s:'Hosen­träger'},
+  {k:'fliege',l:'Fliege / Schleife',s:'Fliege'},
+  {k:'einstecktuch',l:'Einstecktuch',s:'Einsteck­tuch'},
+  {k:'socken',l:'Socken',s:'Socken'},
+  {k:'manschette',l:'Manschettenknöpfe',s:'Man­schette'},
+  {k:'blumen',l:'Boutonnière / Blumen',s:'Bouton­nière'}
+];
+const catLabel=k=>(CATS.find(c=>c.k===k)||{l:'Sonstiges'}).l;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch{return ''}};
+const pub=p=>`${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${p}`;
+const thumbOf=it=>it&&it.image_path?pub(it.image_path+'-t.jpg'):null;
+const fullOf=it=>it&&it.image_path?pub(it.image_path+'-f.jpg'):null;
+
+let sb=null, ready=false, fatal=null;
+const items=new Map(), sets=new Map(), members=new Map();
+let view='items', filter='all';
+try{const v=localStorage.getItem('acc.view'); if(v==='sets'||v==='items') view=v}catch{}
+
+function memberSet(setId){if(!members.has(setId)) members.set(setId,new Set());return members.get(setId)}
+function itemIdsOf(setId){return [...(members.get(setId)||[])]}
+function setsOf(itemId){return [...sets.values()].filter(s=>(members.get(s.id)||new Set()).has(itemId))}
+
+let toastT;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2600)}
+function errText(e){
+  const m=(e&&(e.message||e.error_description||e.error))||'';
+  if(/fetch|network|Failed/i.test(m)) return 'Keine Verbindung. Prüfe das Internet und versuche es erneut.';
+  if(/row-level security|permission|JWT|401|403/i.test(m)) return 'Zugriff verweigert. Lade die Seite neu.';
+  if(/exceeded|quota|too large|Payload/i.test(m)) return 'Speicher voll oder Bild zu groß.';
+  return 'Speichern hat nicht geklappt'+(m?` (${m})`:'')+'.';
+}
+
+/* ---------- Bilder verkleinern ---------- */
+function loadImg(file){
+  return new Promise((res,rej)=>{const url=URL.createObjectURL(file);const im=new Image();im.onload=()=>res({im,url});im.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('img'))};im.src=url});
+}
+function toBlob(c,q){return new Promise(r=>c.toBlob(r,'image/jpeg',q))}
+async function encode(im,maxDim,q){
+  const sw=im.naturalWidth,sh=im.naturalHeight,s=Math.min(1,maxDim/Math.max(sw,sh));
+  const c=document.createElement('canvas');c.width=Math.max(1,Math.round(sw*s));c.height=Math.max(1,Math.round(sh*s));
+  const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height);g.drawImage(im,0,0,c.width,c.height);
+  const blob=await toBlob(c,q);
+  if(!blob) throw new Error('encode');
+  return {blob,w:c.width,h:c.height};
+}
+async function processFile(file){
+  const {im,url}=await loadImg(file);
+  try{
+    const t=await encode(im,640,0.8);
+    const f=await encode(im,1800,0.85);
+    return {thumbBlob:t.blob,fullBlob:f.blob,w:t.w,h:t.h,preview:URL.createObjectURL(t.blob)};
+  } finally {URL.revokeObjectURL(url)}
+}
+
+/* ---------- Daten ---------- */
+async function loadAll(){
+  const [a,b,c]=await Promise.all([
+    sb.from('items').select('*'),
+    sb.from('sets').select('*'),
+    sb.from('set_items').select('*')
+  ]);
+  const err=a.error||b.error||c.error;
+  if(err){ if(!ready){fatal=err;render()} return; }
+  items.clear(); a.data.forEach(r=>items.set(r.id,r));
+  sets.clear(); b.data.forEach(r=>sets.set(r.id,{...r}));
+  members.clear(); c.data.forEach(r=>memberSet(r.set_id).add(r.item_id));
+  ready=true; fatal=null; render(); refreshLayers();
+}
+let reloadT;
+function scheduleReload(){clearTimeout(reloadT);reloadT=setTimeout(loadAll,350)}
+
+/* ---------- Hauptansicht ---------- */
+function sortedItems(){return [...items.values()].sort((a,b)=>String(b.created_at||'').localeCompare(String(a.created_at||'')))}
+function pinHTML(it,opts={}){
+  const ar=it.w&&it.h?`aspect-ratio:${it.w}/${it.h}`:'';
+  const th=thumbOf(it);
+  const img=th?`<div class="ph" style="${ar}"><img src="${esc(th)}" alt="${esc(it.title||catLabel(it.cat))}" loading="lazy"></div>`
+    :`<div class="ph empty"><span>${esc(catLabel(it.cat))}</span></div>`;
+  const n=opts.pick?0:setsOf(it.id).length;
+  const title=it.title||host(it.link)||'Ohne Titel';
+  return `<button class="pin${opts.on?' on':''}" data-a="${opts.pick?'pick':'open-item'}" data-id="${it.id}"${opts.pick?` data-set="${opts.set}" aria-pressed="${!!opts.on}"`:''}>
+    ${img}
+    ${n?`<span class="badge">in ${n} Set${n>1?'s':''}</span>`:''}
+    ${opts.pick?`<span class="check" aria-hidden="true">${opts.on?'✓':''}</span>`:''}
+    <span class="cap">${opts.pick?'':`<span class="cat">${esc(catLabel(it.cat))}</span>`}<span class="t">${esc(title)}</span>${it.price?`<span class="p">${esc(it.price)}</span>`:''}</span>
+  </button>`;
+}
+function render(){
+  document.getElementById('tabItems').setAttribute('aria-pressed',view==='items');
+  document.getElementById('tabSets').setAttribute('aria-pressed',view==='sets');
+  document.getElementById('fabLabel').textContent=view==='items'?'Stück hinzufügen':'Neues Set';
+  document.getElementById('fab').hidden=!ready;
+  document.getElementById('chipsWrap').hidden=view!=='items';
+  const main=document.getElementById('main');
+  if(fatal){
+    const m=String(fatal.message||fatal);
+    const anon=/anonymous/i.test(m);
+    main.innerHTML=`<div class="empty-state"><h2>Verbindung fehlgeschlagen</h2><p>${anon?'Die anonyme Anmeldung ist in Supabase noch nicht eingeschaltet. Unter Authentication, Sign In / Providers „Allow anonymous sign-ins“ aktivieren.':'Die Sammlung konnte nicht geladen werden. Prüfe die Internetverbindung und lade die Seite neu.'}</p><p class="hint">${esc(m)}</p><button class="btn" onclick="location.reload()">Neu laden</button></div>`;
+    return;
+  }
+  if(view==='items') renderItems(main); else renderSets(main);
+}
+function renderChips(){
+  const all=sortedItems();
+  const cnt=k=>all.filter(i=>i.cat===k).length;
+  document.getElementById('chips').innerHTML=
+    `<button class="chip" data-a="filter" data-c="all" aria-pressed="${filter==='all'}">Alle <span class="n">${all.length}</span></button>`+
+    CATS.map(c=>`<button class="chip" data-a="filter" data-c="${c.k}" aria-pressed="${filter===c.k}">${c.l} <span class="n">${cnt(c.k)}</span></button>`).join('');
+}
+function renderItems(main){
+  renderChips();
+  if(!ready){main.innerHTML=`<div class="empty-state"><p>Sammlung wird geladen …</p></div>`;return}
+  const list=sortedItems().filter(i=>filter==='all'||i.cat===filter);
+  if(!list.length){
+    const c=filter==='all'?null:catLabel(filter);
+    main.innerHTML=`<div class="empty-state">
+      <h2>${c?`Noch nichts unter ${esc(c)}`:'Die Pinnwand ist noch leer'}</h2>
+      <p>Tippe unten rechts auf „Stück hinzufügen“. Ein Foto aus der Galerie oder ein Screenshot vom Shop reicht, der Link kommt dazu.</p>
+      ${c?'':`<div class="tags-row">${CATS.map(x=>`<span class="tag">${x.l}</span>`).join('')}</div>`}
+    </div>`;return;
+  }
+  main.innerHTML=`<div class="grid">${list.map(i=>pinHTML(i)).join('')}</div>`;
+}
+function collageHTML(s){
+  const ids=itemIdsOf(s.id);
+  return `<div class="collage">${CATS.map(c=>{
+    const it=ids.map(id=>items.get(id)).find(i=>i&&i.cat===c.k);
+    const th=thumbOf(it);
+    if(th) return `<div class="cell"><img src="${esc(th)}" alt="" loading="lazy"></div>`;
+    return `<div class="cell"><span class="ab${it?' has':''}">${c.s}</span></div>`;
+  }).join('')}</div>`;
+}
+function setStats(s){
+  const its=itemIdsOf(s.id).map(id=>items.get(id)).filter(Boolean);
+  const cats=new Set(its.map(i=>i.cat));
+  return `${its.length} Stück${its.length===1?'':'e'} · ${cats.size} von ${CATS.length} Kategorien`;
+}
+function renderSets(main){
+  if(!ready){main.innerHTML=`<div class="empty-state"><p>Sets werden geladen …</p></div>`;return}
+  const list=[...sets.values()].sort((a,b)=>String(a.created_at||'').localeCompare(String(b.created_at||'')));
+  if(!list.length){
+    main.innerHTML=`<div class="empty-state"><h2>Noch keine Sets</h2><p>Ein Set ist eine Kombination aus der Sammlung, zum Beispiel „Navy mit Gold“. Jedes Stück bleibt nur einmal gespeichert und kann in beliebig vielen Sets stecken.</p><button class="btn gold" data-a="add" style="margin-top:8px">Erstes Set anlegen</button></div>`;
+    return;
+  }
+  main.innerHTML=`<div class="sets">${list.map(s=>`<button class="setcard" data-a="open-set" data-id="${s.id}">${collageHTML(s)}<h3>${esc(s.name||'Unbenanntes Set')}</h3><span class="meta">${setStats(s)}</span></button>`).join('')}</div>`;
+}
+
+/* ---------- Ebenen ---------- */
+const stack=[];
+function openLayer(type,props){
+  const el=document.createElement('div');
+  el.className='layer '+type;
+  el.style.zIndex=100+stack.length*10;
+  document.body.appendChild(el);
+  const L={type,props,el};
+  stack.push(L);
+  document.documentElement.style.overflow='hidden';
+  PAINT[type](L,true);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('in')));
+  return L;
+}
+function closeLayer(L){
+  const i=stack.indexOf(L); if(i<0) return;
+  stack.splice(i,1); L.el.remove();
+  if(L.props&&L.props.preview) URL.revokeObjectURL(L.props.preview);
+  if(!stack.length) document.documentElement.style.overflow='';
+}
+function layerOf(node){return stack.find(L=>L.el.contains(node))}
+function refreshLayers(){
+  for(const L of [...stack]){ if(L.type==='editor'||L.type==='newset') continue; PAINT[L.type](L,false); }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&stack.length) closeLayer(stack[stack.length-1])});
+document.addEventListener('click',e=>{
+  const L=stack.find(l=>l.el===e.target); if(L){closeLayer(L);return}
+  const t=e.target.closest('[data-a]'); if(!t) return;
+  ACT[t.dataset.a]?.(t,e);
+});
+
+const ACT={
+  tab(t){view=t.dataset.v;try{localStorage.setItem('acc.view',view)}catch{};render();window.scrollTo({top:0})},
+  filter(t){filter=t.dataset.c;render()},
+  add(){ if(!ready) return; if(view==='items') openEditor(null); else openLayer('newset',{}); },
+  close(t){const L=layerOf(t);if(L)closeLayer(L)},
+  'open-item'(t){openLayer('detail',{id:t.dataset.id,confirm:false})},
+  'edit-item'(t){const it=items.get(t.dataset.id);if(it)openEditor(it)},
+  'del-item'(t){const L=layerOf(t);L.props.confirm=true;PAINT.detail(L)},
+  'del-cancel'(t){const L=layerOf(t);L.props.confirm=false;PAINT[L.type](L)},
+  async 'del-item-confirm'(t){
+    const L=layerOf(t);const id=t.dataset.id;const it=items.get(id);t.disabled=true;
+    const {error}=await sb.from('items').delete().eq('id',id);
+    if(error){t.disabled=false;toast(errText(error));return}
+    if(it&&it.image_path) sb.storage.from(BUCKET).remove([it.image_path+'-t.jpg',it.image_path+'-f.jpg']).catch(()=>{});
+    items.delete(id); members.forEach(m=>m.delete(id));
+    closeLayer(L);render();refreshLayers();toast('Stück gelöscht');
+  },
+  'toggle-set'(t){toggleInSet(t.dataset.set,t.dataset.id)},
+  pick(t){toggleInSet(t.dataset.set,t.dataset.id)},
+  'open-set'(t){openLayer('setview',{id:t.dataset.id,confirm:false})},
+  'pick-open'(t){openLayer('picker',{set:t.dataset.set,cat:t.dataset.cat})},
+  'add-in-cat'(t){openEditor(null,t.dataset.cat)},
+  'del-set'(t){const L=layerOf(t);L.props.confirm=true;PAINT.setview(L)},
+  async 'del-set-confirm'(t){
+    const L=layerOf(t);const id=L.props.id;t.disabled=true;
+    const {error}=await sb.from('sets').delete().eq('id',id);
+    if(error){t.disabled=false;toast(errText(error));return}
+    sets.delete(id);members.delete(id);closeLayer(L);render();toast('Set gelöscht');
+  }
+};
+
+async function toggleInSet(setId,itemId){
+  if(!sets.has(setId)) return;
+  const m=memberSet(setId);
+  const adding=!m.has(itemId);
+  adding?m.add(itemId):m.delete(itemId);
+  render(); refreshLayers();
+  const q=adding
+    ? sb.from('set_items').insert({set_id:setId,item_id:itemId})
+    : sb.from('set_items').delete().match({set_id:setId,item_id:itemId});
+  const {error}=await q;
+  if(error && !(adding && error.code==='23505')){
+    adding?m.delete(itemId):m.add(itemId);
+    render(); refreshLayers(); toast(errText(error));
+  }
+}
+
+const PAINT={};
+
+/* Detail eines Stücks */
+PAINT.detail=(L,first)=>{
+  const it=items.get(L.props.id);
+  if(!it){ if(!first) closeLayer(L); return; }
+  const th=thumbOf(it), full=fullOf(it);
+  const src=L.props.fullLoaded===full?full:th;
+  const h=host(it.link);
+  const allSets=[...sets.values()].sort((a,b)=>String(a.created_at||'').localeCompare(String(b.created_at||'')));
+  L.el.innerHTML=`<div class="panel" role="dialog" aria-modal="true" aria-label="${esc(it.title||catLabel(it.cat))}">
+    <button class="x dclose" data-a="close" aria-label="Schließen">✕</button>
+    <div class="dwrap">
+      <div class="dimg${src?'':' empty'}">${src?`<img src="${esc(src)}" alt="${esc(it.title||catLabel(it.cat))}">`:`<span>${esc(catLabel(it.cat))}</span>`}</div>
+      <div class="dinfo">
+        <div><span class="tag">${esc(catLabel(it.cat))}</span>
+        <h2>${esc(it.title||h||'Ohne Titel')}</h2></div>
+        ${it.price?`<div class="dprice">${esc(it.price)}</div>`:''}
+        ${it.link?`<div class="row"><a class="btn primary" href="${esc(it.link)}" target="_blank" rel="noopener noreferrer">Zum Artikel ↗</a><span class="host">${esc(h)}</span></div>`:`<p class="hint">Kein Link hinterlegt.</p>`}
+        ${it.note?`<p class="dnote">${esc(it.note)}</p>`:''}
+        <div class="sect"><h3>In Sets</h3>
+          ${allSets.length?`<div class="setchips">${allSets.map(s=>{const on=(members.get(s.id)||new Set()).has(it.id);return `<button class="chip" data-a="toggle-set" data-set="${s.id}" data-id="${it.id}" aria-pressed="${on}">${on?'✓ ':''}${esc(s.name||'Unbenanntes Set')}</button>`}).join('')}</div><p class="hint">Antippen fügt das Stück einem Set hinzu oder nimmt es heraus.</p>`
+            :`<p class="hint">Noch keine Sets. Lege unter „Sets“ eines an.</p>`}
+        </div>
+        ${L.props.confirm
+          ?`<div class="note-box">Dieses Stück wird gelöscht und aus allen Sets entfernt.<div class="row" style="margin-top:10px"><button class="btn danger solid sm" data-a="del-item-confirm" data-id="${it.id}">Endgültig löschen</button><button class="btn sm" data-a="del-cancel">Abbrechen</button></div></div>`
+          :`<div class="row"><button class="btn sm" data-a="edit-item" data-id="${it.id}">Bearbeiten</button><button class="btn danger sm" data-a="del-item" data-id="${it.id}">Löschen</button></div>`}
+      </div>
+    </div>
+  </div>`;
+  if(full&&L.props.fullLoaded!==full){
+    const pre=new Image();
+    pre.onload=()=>{L.props.fullLoaded=full;const img=L.el.querySelector('.dimg img');if(img)img.src=full};
+    pre.src=full;
+  }
+};
+
+/* Formular für neues oder bestehendes Stück */
+function openEditor(item,presetCat){
+  openLayer('editor',{
+    id:item?.id||null, orig:item||null,
+    cat:item?.cat||presetCat||(filter!=='all'?filter:''),
+    preview:null, thumbBlob:null, fullBlob:null, w:item?.w||null, h:item?.h||null,
+    hasPhoto:!!item?.image_path, photoChanged:false, busy:false
+  });
+}
+const dropHint=`<strong>Foto auswählen</strong><small>Galerie, Kamera oder Screenshot vom Shop. Am PC auch per Strg+V einfügen oder hierher ziehen.</small>`;
+PAINT.editor=(L)=>{
+  const p=L.props,o=p.orig||{};
+  const shown=p.preview||(p.hasPhoto&&!p.photoChanged?thumbOf(o):null);
+  L.el.innerHTML=`<form class="panel" id="itemForm" role="dialog" aria-modal="true" aria-label="${p.id?'Stück bearbeiten':'Neues Stück'}" novalidate>
+    <div class="phead"><h2>${p.id?'Stück bearbeiten':'Neues Stück'}</h2><button type="button" class="x" data-a="close" aria-label="Schließen">✕</button></div>
+    <div class="pbody">
+      <div class="field"><span class="lbl" id="catLbl">Kategorie</span>
+        <div class="catpick" role="radiogroup" aria-labelledby="catLbl">${CATS.map(c=>`<input type="radio" name="cat" id="c_${c.k}" value="${c.k}"${p.cat===c.k?' checked':''}><label for="c_${c.k}">${c.l}</label>`).join('')}</div>
+      </div>
+      <div class="field"><span class="lbl">Foto</span>
+        <label class="drop${shown?' has':''}" for="fPhoto" id="drop">${shown?`<img src="${esc(shown)}" alt="Vorschau">`:dropHint}</label>
+        <input type="file" id="fPhoto" accept="image/*" class="sr">
+        <div class="row" id="photoRow"${shown?'':' hidden'}><button type="button" class="btn sm" id="photoReplace">Foto ersetzen</button><button type="button" class="btn sm danger" id="photoRemove">Foto entfernen</button></div>
+        <p class="hint" id="photoMsg" hidden></p>
+      </div>
+      <div class="field"><label for="fLink">Link zum Artikel</label><input class="input" id="fLink" type="url" inputmode="url" autocomplete="off" placeholder="https://…" value="${esc(o.link||'')}"></div>
+      <div class="two">
+        <div class="field"><label for="fTitle">Bezeichnung</label><input class="input" id="fTitle" type="text" autocomplete="off" placeholder="z. B. Seidenfliege dunkelblau" value="${esc(o.title||'')}"></div>
+        <div class="field"><label for="fPrice">Preis</label><input class="input" id="fPrice" type="text" inputmode="decimal" autocomplete="off" placeholder="49 €" value="${esc(o.price||'')}"></div>
+      </div>
+      <div class="field"><label for="fNote">Notiz</label><textarea class="input" id="fNote" placeholder="Farbe, Größe, Lieferzeit, Meinung …">${esc(o.note||'')}</textarea></div>
+      <p class="err" id="formErr" hidden></p>
+    </div>
+    <div class="pfoot"><button type="button" class="btn" data-a="close">Abbrechen</button><button type="submit" class="btn primary" id="saveBtn">Speichern</button></div>
+  </form>`;
+  const form=L.el.querySelector('#itemForm'),file=L.el.querySelector('#fPhoto'),drop=L.el.querySelector('#drop');
+  const msg=L.el.querySelector('#photoMsg'),row=L.el.querySelector('#photoRow');
+  const setPreview=()=>{
+    const s=p.preview||(p.hasPhoto&&!p.photoChanged?thumbOf(o):null);
+    drop.classList.toggle('has',!!s);
+    drop.innerHTML=s?`<img src="${esc(s)}" alt="Vorschau">`:dropHint;
+    row.hidden=!s;
+  };
+  const take=async f=>{
+    if(!f||(f.type&&!/^image\//.test(f.type))) return;
+    msg.hidden=false;msg.textContent='Foto wird verkleinert …';p.busy=true;
+    try{
+      const r=await processFile(f);
+      if(p.preview) URL.revokeObjectURL(p.preview);
+      Object.assign(p,{preview:r.preview,thumbBlob:r.thumbBlob,fullBlob:r.fullBlob,w:r.w,h:r.h,photoChanged:true});
+      setPreview();msg.hidden=true;
+    }catch{msg.textContent='Dieses Bild ließ sich nicht lesen. Versuche ein JPG oder PNG, zum Beispiel einen Screenshot.'}
+    p.busy=false;
+  };
+  file.addEventListener('change',()=>{take(file.files[0]);file.value=''});
+  L.el.querySelector('#photoReplace').addEventListener('click',()=>file.click());
+  L.el.querySelector('#photoRemove').addEventListener('click',()=>{
+    if(p.preview) URL.revokeObjectURL(p.preview);
+    Object.assign(p,{preview:null,thumbBlob:null,fullBlob:null,w:null,h:null,photoChanged:true});setPreview();
+  });
+  L.el.addEventListener('paste',e=>{const f=[...(e.clipboardData?.files||[])].find(x=>/^image\//.test(x.type));if(f){e.preventDefault();take(f)}});
+  drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag')});
+  drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+  drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');take(e.dataTransfer.files[0])});
+  form.addEventListener('submit',e=>{e.preventDefault();saveItem(L)});
+};
+async function saveItem(L){
+  const p=L.props,el=L.el,err=el.querySelector('#formErr'),btn=el.querySelector('#saveBtn');
+  const cat=el.querySelector('input[name="cat"]:checked')?.value;
+  let link=el.querySelector('#fLink').value.trim();
+  const title=el.querySelector('#fTitle').value.trim(),price=el.querySelector('#fPrice').value.trim(),note=el.querySelector('#fNote').value.trim();
+  if(link&&!/^https?:\/\//i.test(link)) link='https://'+link;
+  const fail=t=>{err.textContent=t;err.hidden=false;err.scrollIntoView({block:'nearest'})};
+  if(p.busy) return fail('Das Foto wird noch verarbeitet. Einen Moment.');
+  if(!cat) return fail('Wähle eine Kategorie.');
+  const willHavePhoto=p.photoChanged?!!p.thumbBlob:p.hasPhoto;
+  if(!willHavePhoto&&!link&&!title) return fail('Füge mindestens ein Foto, einen Link oder eine Bezeichnung hinzu.');
+  err.hidden=true;btn.disabled=true;btn.textContent='Speichert …';
+  const o=p.orig||{};
+  const id=p.id||crypto.randomUUID();
+  let image_path=o.image_path||null, oldPath=null;
+  try{
+    if(p.photoChanged){
+      oldPath=o.image_path||null;
+      image_path=null;
+      if(p.thumbBlob){
+        const base=`${id}/${Date.now()}`;
+        const st=sb.storage.from(BUCKET);
+        const opt={contentType:'image/jpeg',cacheControl:'31536000',upsert:false};
+        const r1=await st.upload(base+'-t.jpg',p.thumbBlob,opt); if(r1.error) throw r1.error;
+        const r2=await st.upload(base+'-f.jpg',p.fullBlob,opt); if(r2.error) throw r2.error;
+        image_path=base;
+      }
+    }
+    const row={cat,link,title,price,note,image_path,w:image_path?(p.photoChanged?p.w:o.w):null,h:image_path?(p.photoChanged?p.h:o.h):null,updated_at:new Date().toISOString()};
+    const res=p.id
+      ? await sb.from('items').update(row).eq('id',id).select().single()
+      : await sb.from('items').insert({id,...row}).select().single();
+    if(res.error) throw res.error;
+    if(oldPath&&oldPath!==image_path) sb.storage.from(BUCKET).remove([oldPath+'-t.jpg',oldPath+'-f.jpg']).catch(()=>{});
+    items.set(id,res.data);
+    closeLayer(L);render();refreshLayers();toast(p.id?'Änderungen gespeichert':'Stück gespeichert');
+  }catch(e){btn.disabled=false;btn.textContent='Speichern';fail(errText(e))}
+}
+
+/* Neues Set */
+PAINT.newset=(L)=>{
+  L.el.innerHTML=`<form class="panel" id="setForm" role="dialog" aria-modal="true" aria-label="Neues Set" novalidate>
+    <div class="phead"><h2>Neues Set</h2><button type="button" class="x" data-a="close" aria-label="Schließen">✕</button></div>
+    <div class="pbody"><div class="field"><label for="fSetName">Name des Sets</label><input class="input" id="fSetName" type="text" autocomplete="off" placeholder="z. B. Navy mit Gold"></div><p class="err" id="setErr" hidden></p></div>
+    <div class="pfoot"><button type="button" class="btn" data-a="close">Abbrechen</button><button type="submit" class="btn primary" id="setSave">Anlegen</button></div>
+  </form>`;
+  const f=L.el.querySelector('#setForm');
+  setTimeout(()=>L.el.querySelector('#fSetName')?.focus(),60);
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const name=L.el.querySelector('#fSetName').value.trim(),err=L.el.querySelector('#setErr'),btn=L.el.querySelector('#setSave');
+    if(!name){err.textContent='Gib dem Set einen Namen.';err.hidden=false;return}
+    btn.disabled=true;btn.textContent='Legt an …';
+    const {data,error}=await sb.from('sets').insert({name}).select().single();
+    if(error){btn.disabled=false;btn.textContent='Anlegen';err.textContent=errText(error);err.hidden=false;return}
+    sets.set(data.id,data);
+    closeLayer(L);view='sets';try{localStorage.setItem('acc.view',view)}catch{};render();
+    openLayer('setview',{id:data.id,confirm:false});
+  });
+};
+
+/* Set-Ansicht */
+PAINT.setview=(L,first)=>{
+  const s=sets.get(L.props.id);
+  if(!s){ if(!first) closeLayer(L); return; }
+  if(first){
+    L.el.innerHTML=`<div class="panel" role="dialog" aria-modal="true" aria-label="Set">
+      <div class="phead"><input class="namein" id="sName" aria-label="Name des Sets" value="${esc(s.name||'')}"><button class="x" data-a="close" aria-label="Schließen">✕</button></div>
+      <div class="pbody">
+        <div class="field"><label for="sNote">Notiz zum Set</label><textarea class="input" id="sNote" placeholder="Wozu passt es, was fehlt noch …">${esc(s.note||'')}</textarea></div>
+        <div id="slots"></div>
+        <div id="setDanger"></div>
+      </div>
+    </div>`;
+    const nm=L.el.querySelector('#sName'),nt=L.el.querySelector('#sNote');
+    const save=async(field,val)=>{
+      const cur=sets.get(L.props.id); if(!cur||cur[field]===val) return;
+      const prev=cur[field]; cur[field]=val; render();
+      const {error}=await sb.from('sets').update({[field]:val}).eq('id',cur.id);
+      if(error){cur[field]=prev;render();toast(errText(error))}
+    };
+    nm.addEventListener('change',()=>save('name',nm.value.trim()||'Unbenanntes Set'));
+    nt.addEventListener('change',()=>save('note',nt.value.trim()));
+  } else {
+    const nm=L.el.querySelector('#sName'),nt=L.el.querySelector('#sNote');
+    if(nm&&document.activeElement!==nm) nm.value=s.name||'';
+    if(nt&&document.activeElement!==nt) nt.value=s.note||'';
+  }
+  const ids=itemIdsOf(s.id);
+  L.el.querySelector('#slots').innerHTML=CATS.map(c=>{
+    const its=ids.map(id=>items.get(id)).filter(i=>i&&i.cat===c.k);
+    return `<section class="slot">
+      <div class="slot-h"><h3>${c.l}</h3><span class="n">${its.length?its.length+' gewählt':'offen'}</span></div>
+      <div class="strip-wrap"><div class="strip">
+        ${its.map(i=>{const th=thumbOf(i);return `<button class="mini" data-a="open-item" data-id="${i.id}">${th?`<div class="ph"><img src="${esc(th)}" alt=""></div>`:`<div class="ph empty"><span>${esc(c.s)}</span></div>`}<span class="t">${esc(i.title||host(i.link)||'Ohne Titel')}</span></button>`}).join('')}
+        <button class="addtile" data-a="pick-open" data-set="${s.id}" data-cat="${c.k}"><span><span class="plus">+</span>${its.length?'Ändern':'Auswählen'}</span></button>
+      </div></div>
+    </section>`;
+  }).join('');
+  L.el.querySelector('#setDanger').innerHTML=L.props.confirm
+    ?`<div class="note-box">Das Set wird gelöscht. Die Stücke bleiben in der Sammlung.<div class="row" style="margin-top:10px"><button class="btn danger solid sm" data-a="del-set-confirm">Set löschen</button><button class="btn sm" data-a="del-cancel">Abbrechen</button></div></div>`
+    :`<button class="btn danger sm" data-a="del-set">Set löschen</button>`;
+};
+
+/* Auswahl für ein Set */
+PAINT.picker=(L)=>{
+  const s=sets.get(L.props.set);
+  if(!s){closeLayer(L);return}
+  const cat=L.props.cat,m=members.get(s.id)||new Set();
+  const list=sortedItems().filter(i=>i.cat===cat);
+  const sc=L.el.querySelector('.panel')?.scrollTop||0;
+  L.el.innerHTML=`<div class="panel" role="dialog" aria-modal="true" aria-label="${esc(catLabel(cat))} auswählen">
+    <div class="phead"><h2>${esc(catLabel(cat))}<br><span class="eyebrow">für ${esc(s.name||'Unbenanntes Set')}</span></h2><button class="x" data-a="close" aria-label="Schließen">✕</button></div>
+    <div class="pbody">
+      ${list.length?`<p class="hint">Antippen wählt ein Stück aus oder ab. Mehrere sind möglich, etwa als Alternativen.</p><div class="grid">${list.map(i=>pinHTML(i,{pick:true,set:s.id,on:m.has(i.id)})).join('')}</div>`
+      :`<div class="empty-state" style="margin-top:2vh"><h2>Noch keine Stücke</h2><p>In dieser Kategorie ist noch nichts gesammelt.</p><button class="btn gold" data-a="add-in-cat" data-cat="${cat}">Stück hinzufügen</button></div>`}
+    </div>
+    <div class="pfoot"><button class="btn primary" data-a="close">Fertig</button></div>
+  </div>`;
+  const panel=L.el.querySelector('.panel'); if(panel) panel.scrollTop=sc;
+};
+
+/* ---------- Start ---------- */
+render();
+(async()=>{
+  if(!window.supabase){fatal=new Error('Die Supabase-Bibliothek konnte nicht geladen werden.');render();return}
+  sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:true,autoRefreshToken:true}});
+  try{
+    const {data:{session}}=await sb.auth.getSession();
+    if(!session){
+      const {error}=await sb.auth.signInAnonymously();
+      if(error) throw error;
+    }
+  }catch(e){fatal=e;render();return}
+  await loadAll();
+  sb.channel('pinnwand')
+    .on('postgres_changes',{event:'*',schema:'public',table:'items'},scheduleReload)
+    .on('postgres_changes',{event:'*',schema:'public',table:'sets'},scheduleReload)
+    .on('postgres_changes',{event:'*',schema:'public',table:'set_items'},scheduleReload)
+    .subscribe();
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible') scheduleReload()});
+})();
+</script>
+</body>
+</html>
